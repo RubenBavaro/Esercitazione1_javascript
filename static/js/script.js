@@ -49,7 +49,7 @@ console.log("Benvenuto " + firstName)
 */
 let domanda1 = prompt("Quale è la capitale d'Italia?")
 let domandaN1 = domanda1.toLowerCase()
-    if (domandaN1 === "roma"){
+    if (domandaN1.trim() === "roma"){
         risposteCorrette += 1
         console.log("La risposta è corretta.")
     }else{
@@ -59,7 +59,7 @@ let domandaN1 = domanda1.toLowerCase()
 
 let domanda2 = prompt("Quale è il cognome del miglior professore del mondo?")
 let domandaN2 = domanda2.toLocaleLowerCase()
-if (domanda2.toLowerCase() === "mastrandrea"){
+if (domandaN2.trim() === "mastrandrea"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -69,8 +69,12 @@ if (domanda2.toLowerCase() === "mastrandrea"){
 */
 
 let domanda3 = prompt("Quanto fa 2+2?")
+while (isNaN(domanda3)){
+    console.log("Quello inserito non era un numero.")
+    domanda3 = prompt("Quanto fa 2+2?")
+}
 let domandaN3 = parseInt(domanda3)
-if (domandaN3 === 4){
+if (domandaN3.trim() === 4){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -81,7 +85,7 @@ if (domandaN3 === 4){
 
 let domanda4 = prompt("Quale è la capitale della Puglia?")
 let domandaN4 = domanda4.toLocaleLowerCase()
-if (domandaN4 === "bari"){
+if (domandaN4.trim() === "bari"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -92,7 +96,7 @@ if (domandaN4 === "bari"){
 
 let domanda5 = prompt("Il linguaggio di progammazione piu semplice: ")
 let domandaN5 = domanda5.toLocaleLowerCase()
-if (domanda5 === "python"){
+if (domanda5.trim() === "python"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -102,8 +106,12 @@ if (domanda5 === "python"){
 */
 
 let domanda6 = prompt("Da quanti bit è formato un byte?")
+while (isNaN(domanda8)){
+    console.log("Quello inserito non era un numero.")
+    domanda8 = prompt("Da quanti bit è formato un byte?")
+}
 let domandaN6 = parseInt(domanda6)
-if (domandaN6 === 8){
+if (domandaN6.trim() === 8){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -114,7 +122,7 @@ if (domandaN6 === 8){
 
 let domanda7 = prompt("Come si chiama questa scuola?")
 let domandaN7 = domanda7.toLocaleLowerCase()
-if (domandaN7 === "panetti"){
+if (domandaN7.trim() === "panetti"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
