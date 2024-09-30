@@ -35,10 +35,28 @@ if(firstName === null){
 
     - in caso negativo mostrare la risposta corretta
 Al termine delle sette domande mostrare con console.log
+Integrare con 2 funzioni l'esercizio: 
+1 - funzione per fare sanitize dell'input -> prende in input una stringa e restituisce la stringa "sanificata"
+2 - funzione per calcolo percentuale -> prende in input il numero di cui vogliamo calcolare la percentuale e il valore massimo che corrisponde al 100
 */
 
+function sanitize(Var){
+    let sanificata
+    if (Var!=isNaN){
+        sanificata =  Var.trim().toLowerCase();
+    }
+    
+    return sanificata
+}
+
+function percentuale(ValOtt, ValMax){
+    let percentua = (ValOtt * 100)/ValMax
+
+    return percentua
+}
+
 let ri = 0
-risposteCorrette= parseInt(ri);
+risposteCorrette = parseInt(ri);
 let firstName
 do {
      firstName = prompt("Inserisci il tuo nome: ") 
@@ -48,8 +66,8 @@ console.log("Benvenuto " + firstName)
 /*
 */
 let domanda1 = prompt("Quale è la capitale d'Italia?")
-let domandaN1 = domanda1.toLowerCase()
-    if (domandaN1.trim() === "roma"){
+let domandaN1 = sanitize(domanda1)
+    if (domandaN1 === "roma"){
         risposteCorrette += 1
         console.log("La risposta è corretta.")
     }else{
@@ -58,8 +76,8 @@ let domandaN1 = domanda1.toLowerCase()
 
 
 let domanda2 = prompt("Quale è il cognome del miglior professore del mondo?")
-let domandaN2 = domanda2.toLowerCase()
-if (domandaN2.trim() === "mastrandrea"){
+let domandaN2 = sanitize(domanda2)
+if (domandaN2 === "mastrandrea"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -84,8 +102,8 @@ if (domandaN3 === 4){
 */
 
 let domanda4 = prompt("Quale è la capitale della Puglia?")
-let domandaN4 = domanda4.toLocaleLowerCase()
-if (domandaN4.trim() === "bari"){
+let domandaN4 = sanitize(domanda4)
+if (domandaN4 === "bari"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -95,7 +113,7 @@ if (domandaN4.trim() === "bari"){
 */
 
 let domanda5 = prompt("Il linguaggio di progammazione piu semplice: ")
-let domandaN5 = domanda5.toLocaleLowerCase()
+let domandaN5 = sanitize(domanda5)
 if (domandaN5.trim() === "python"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
@@ -121,17 +139,17 @@ if (domandaN6 === 8){
 */
 
 let domanda7 = prompt("Come si chiama questa scuola?")
-let domandaN7 = domanda7.toLocaleLowerCase()
-if (domandaN7.trim() === "panetti"){
+let domandaN7 = sanitize(domanda7)
+if (domandaN7 === "panetti"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
     console.log("Errato. La risposta corretta era Panetti.")
 }
 
-let percentuale = (risposteCorrette*100)/7
-percentuale = parseFloat(percentuale)
-console.log("La tua percentuale è: " + percentuale.toFixed(2) + "%")
+let percent = percentuale(risposteCorrette, 7)
+percent = parseFloat(percent)
+console.log("La tua percentuale è: " + percent.toFixed(2) + "%")
 switch (risposteCorrette){
     case 1:
         console.log("Sola una risposta è corretta.")
