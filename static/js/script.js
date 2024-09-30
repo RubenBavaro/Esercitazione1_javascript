@@ -58,7 +58,7 @@ let domandaN1 = domanda1.toLowerCase()
 
 
 let domanda2 = prompt("Quale è il cognome del miglior professore del mondo?")
-let domandaN2 = domanda2.toLocaleLowerCase()
+let domandaN2 = domanda2.toLowerCase()
 if (domandaN2.trim() === "mastrandrea"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
@@ -74,7 +74,7 @@ while (isNaN(domanda3)){
     domanda3 = prompt("Quanto fa 2+2?")
 }
 let domandaN3 = parseInt(domanda3)
-if (domandaN3.trim() === 4){
+if (domandaN3 === 4){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -96,7 +96,7 @@ if (domandaN4.trim() === "bari"){
 
 let domanda5 = prompt("Il linguaggio di progammazione piu semplice: ")
 let domandaN5 = domanda5.toLocaleLowerCase()
-if (domanda5.trim() === "python"){
+if (domandaN5.trim() === "python"){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -106,12 +106,12 @@ if (domanda5.trim() === "python"){
 */
 
 let domanda6 = prompt("Da quanti bit è formato un byte?")
-while (isNaN(domanda8)){
+while (isNaN(domanda6)){
     console.log("Quello inserito non era un numero.")
     domanda8 = prompt("Da quanti bit è formato un byte?")
 }
 let domandaN6 = parseInt(domanda6)
-if (domandaN6.trim() === 8){
+if (domandaN6 === 8){
     risposteCorrette += 1
     console.log("La risposta è corretta.")
 }else{
@@ -129,6 +129,9 @@ if (domandaN7.trim() === "panetti"){
     console.log("Errato. La risposta corretta era Panetti.")
 }
 
+let percentuale = (risposteCorrette*100)/7
+percentuale = parseFloat(percentuale)
+console.log("La tua percentuale è: " + percentuale.toFixed(2) + "%")
 switch (risposteCorrette){
     case 1:
         console.log("Sola una risposta è corretta.")
@@ -143,8 +146,8 @@ switch (risposteCorrette){
     case 6:
         console.log("Sei risposte sono corrette.")
     case 7:
-        console.log("Tutte le risposte inserite sono corrette. Ecco un biscotto:)")
-    case 0:
-        console.log("Tutte le risposte inserite sono sbagliate.")
-                
+        console.log("Tutte le risposte inserite sono corrette. Ecco un biscotto:)")          
+}
+if (risposteCorrette===0){
+    console.log("Tutte le risposte inserite sono sbagliate.")  
 }
